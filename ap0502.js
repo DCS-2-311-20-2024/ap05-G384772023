@@ -132,7 +132,13 @@ function init() {
   function render() {
     axes.visible = controls.axes;
     // テクスチャの切り替え
+    if(controls.axes){
+      material.map = moonTexture;
+    }else if(controls.test){
+      material.map = testTexture;
+    }else if(gui=="rotate"){
 
+    }
     // 物体の回転
     if (controls.rotate) {
       icosahedron.rotation.y = (icosahedron.rotation.y + 0.01) % (2 * Math.PI);
